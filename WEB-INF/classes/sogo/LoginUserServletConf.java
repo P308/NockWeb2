@@ -21,8 +21,8 @@ public class LoginUserServletConf extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html);charaset = UTF-8");
-		String id = (String) (request.getParameter("id"));
-		String pass = (String) (request.getParameter("pass"));
+		String id = request.getParameter("id");
+		String pass =request.getParameter("pass");
 
 		UserDao dao = new UserDao();
 
@@ -30,10 +30,10 @@ public class LoginUserServletConf extends HttpServlet {
 
 		request.setAttribute("login_name", dao.getUser(id, pass));
 		request.setAttribute("login_dep", dao.getDept(id, pass));
-		String requestedId = (String) (request.getAttribute("login_name"));
+		String requestedId = (String) request.getAttribute("login_name");
 		if (requestedId != null) {
 			/**
-			 * 遷移先をmenu.jspに定める		
+			 * 遷移先をmenu.jspに定める
 			 */
 			forward = "web/menu.jsp";
 		} else {
