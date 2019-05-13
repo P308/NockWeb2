@@ -82,7 +82,7 @@ public class UserDao extends DBAccess{
 		//arrayListをnewする
 		ArrayList<UserBean> list = new ArrayList<UserBean>();
 
-		String sql = "select user.id,user.name,dep.name,status.name,status.kyuyo from user right join dep on  user.dep = dep.id right join status on user.status = status.id";
+		String sql = "select user.id,user.name,dep.name,status.name,format(status.kyuyo,0) from user left join dep on  user.dep = dep.id left join status on user.status = status.id";
 
 		try {
 			//Connectionオブジェクトを取得する
@@ -97,7 +97,7 @@ public class UserDao extends DBAccess{
 				bean.setName(rs.getString("user.name"));
 				bean.setDept(rs.getString("dep.name"));
 				bean.setStatus(rs.getString("status.name"));
-				bean.setKyuyo(rs.getString("status.kyuyo"));
+				bean.setKyuyo(rs.getString("format(status.kyuyo,0)"));
 				list.add(bean);
 			}
 

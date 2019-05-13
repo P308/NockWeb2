@@ -34,7 +34,7 @@
 
 		<a href="/NockWeb/syainKyuyo">社員給与一覧</a>
 		<form method="post" action = "/NockWeb/syainKyuyo">
-		<button onclick= "histry.back">戻る</button>
+		<button>戻る</button>
 		</form>
 		<% } %>
 

@@ -16,6 +16,7 @@ public class SyainKyuyoServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html);charaset = UTF-8");
+		
 
 		UserDao dao = new UserDao();
 		request.setAttribute("list", dao.selectSalaly());
