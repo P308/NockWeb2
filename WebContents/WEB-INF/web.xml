@@ -57,4 +57,12 @@
     <servlet-name>loginConf</servlet-name>
     <url-pattern>/loginConf</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>SalalyTable</servlet-name>
+    <servlet-class>sogo.SyainKyuyoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SalalyTable</servlet-name>
+    <url-pattern>/syainKyuyo</url-pattern>
+  </servlet-mapping>
 </web-app>
